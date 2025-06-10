@@ -33,6 +33,7 @@ classifiers = [
 requires-python = ">=3.4"
 dependencies = [
   "protobuf",
+  "importlib-resources",
   "mprofile @ git+https://github.com/achopik/mprofile.git"
 ]
 

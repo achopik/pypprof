@@ -1,7 +1,6 @@
 from __future__ import print_function
 
 import gc
-import pkg_resources
 import sys
 import threading
 import time
@@ -9,13 +8,12 @@ import traceback
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs, urlparse
 
+import importlib_resources
+
 
 import mprofile
 from pypprof.builder import Builder
 from pypprof import thread_profiler
-
-
-# _wall_profiler = WallProfiler()
 
 
 def start_pprof_server(host='localhost', port=8080):
@@ -62,7 +60,7 @@ class PProfRequestHandler(BaseHTTPRequestHandler):
             self.send_error(404)
 
     def index(self):
-        template = pkg_resources.resource_string(__name__, "index.html").decode("utf-8")
+        template = importlib_resources.files(__name__).joinpath("index.html").read_text("utf-8")
         body = template.format(num_threads=threading.active_count())
 
         self.send_response(200)
