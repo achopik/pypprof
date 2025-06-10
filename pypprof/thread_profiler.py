@@ -1,5 +1,4 @@
 from collections import Counter
-import six
 import sys
 
 from pypprof import builder
@@ -10,7 +9,7 @@ _MAX_STACK_DEPTH = 128
 
 def take_snapshot():
   samples = {extract_trace(frame): (1, 1)
-             for frame in six.itervalues(sys._current_frames())}
+             for frame in sys._current_frames().values()}
   profile_builder = builder.Builder()
   profile_builder.populate_profile(samples, 'THREADS', 'count', 1, 1)
   return profile_builder.emit()

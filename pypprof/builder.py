@@ -17,7 +17,6 @@
 import collections
 import gzip
 import io
-import six
 
 from pypprof import profile_pb2
 
@@ -64,7 +63,7 @@ class Builder(object):
     type2.type = self._string_id(profile_type)
     type2.unit = self._string_id(period_unit)
 
-    for trace, (count, value) in six.iteritems(samples):
+    for trace, (count, value) in samples.items():
       sample = self._profile.sample.add()
       sample.value.append(count)
       sample.value.append(value)

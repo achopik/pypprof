@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypprof"
+version = "0.0.1"
+description = "Python profiler endpoints like Go's net/http/pprof."
+readme = "README.md"
+license = { text = "LGPLv3" }
+authors = [
+  { name = "Timothy Palpant", email = "tim@palpant.us" },
+]
+keywords = ["profiling", "performance"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+requires-python = ">=3.4"
+dependencies = [
+  "protobuf",
+  "mprofile @ git+https://github.com/achopik/mprofile.git"
+]
+
+[project.urls]
+Source = "https://github.com/timpalpant/pypprof"
+Tracker = "https://github.com/timpalpant/pypprof/issues"
+Homepage = "http://github.com/timpalpant/pypprof"
+
+[tool.setuptools.packages.find]
+include = ["pypprof"]
+
+[tool.setuptools.package-data]
+pypprof = ["index.html"]
