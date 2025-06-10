@@ -16,9 +16,6 @@ classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
     "Operating System :: POSIX",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -30,9 +27,9 @@ classifiers = [
     "Topic :: Software Development :: Testing",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
-requires-python = ">=3.4"
+requires-python = ">=3.7"
 dependencies = [
-  "protobuf",
+  "protobuf>=4.21.1",
   "importlib-resources",
   "mprofile @ git+https://github.com/achopik/mprofile.git"
 ]
@@ -40,7 +37,7 @@ dependencies = [
 [project.urls]
 Source = "https://github.com/timpalpant/pypprof"
 Tracker = "https://github.com/timpalpant/pypprof/issues"
-Homepage = "http://github.com/timpalpant/pypprof"
+Homepage = "https://github.com/timpalpant/pypprof"
 
 [tool.setuptools.packages.find]
 include = ["pypprof"]
